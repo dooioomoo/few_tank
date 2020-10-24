@@ -1,5 +1,5 @@
 {
-  "name": "few-mini",
+  "name": "few_tank",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dooioomoo/few-mini.git"
+    "url": "git+https://github.com/dooioomoo/few_tank.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dooioomoo/few-mini/issues"
+    "url": "https://github.com/dooioomoo/few_tank/issues"
   },
-  "homepage": "https://github.com/dooioomoo/few-mini#readme",
+  "homepage": "https://github.com/dooioomoo/few_tank#readme",
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "browser-sync": "^2.26.12",
