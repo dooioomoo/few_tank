@@ -16,7 +16,7 @@
     "url": "https://github.com/dooioomoo/few-mini/issues"
   },
   "homepage": "https://github.com/dooioomoo/few-mini#readme",
-  "dependencies": {
+  "devDependencies": {
     "autoprefixer": "^9.8.6",
     "browser-sync": "^2.26.12",
     "child_process": "^1.0.2",
