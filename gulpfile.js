@@ -26,6 +26,17 @@ var init_compile = function (task, v) {
     return run_array;
 }
 
+var init_syncWatch = function (done) {
+    builder.gulp.watch(
+        [
+            "./**/*.php",
+            "./**/*.html",
+            setting.base.exportPath + "**/*",
+        ],
+        builder.browserSync_reload
+    )
+    done()
+};
 // console.log(init_compile(compile.sass, 'sass'));
 
 exports.sass = builder.gulp.series.apply(builder.gulp, [init_compile(compile.sass, 'sass'), cleanFile.clear]);
@@ -43,4 +54,7 @@ exports.init = builder.gulp.series(
     exports.imgmini,
     cleanFile.clear,
 );
-exports.default = builder.gulp.series(exports.init, ex.watch.init);
+
+exports.watch = builder.gulp.series(exports.init, ex.watch.init);
+exports.sync = builder.gulp.series(exports.init, ex.watch.init, init_syncWatch, builder.browserSync_start);
+exports.default = builder.gulp.series(exports.init);

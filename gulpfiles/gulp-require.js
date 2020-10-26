@@ -5,6 +5,7 @@ const less = require("gulp-less");
 const concat = require("gulp-concat");
 const wait = require("gulp-wait");
 const autoprefixer = require("autoprefixer");
+const browsersync = require("browser-sync").create();
 const cssnano = require("cssnano");
 const minify = require("gulp-minify");
 const clean = require("gulp-clean");
@@ -55,5 +56,22 @@ module.exports = {
             result = concat_(result, arguments[i]);
         }
         return result;
+    },
+    php: () => {
+        php.server({ base: setting.server.root, port: setting.server.port, keepalive: true });
+    },
+    browserSync_start: function browserSync(done) {
+        browsersync.init({
+            //在setting修改成真实域名
+            proxy: setting.server.name,
+            baseDir: setting.server.root,
+            open: true,
+            notify: false,
+        });
+        done();
+    },
+    browserSync_reload: function browserSyncReload(done) {
+        browsersync.reload();
+        done();
     },
 };

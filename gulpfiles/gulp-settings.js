@@ -23,6 +23,8 @@ module.exports = {
     },
     server: {
         root: '/',
+        name: 'localhost',
+        port: '3000',
     },
     less: {
         common: {
