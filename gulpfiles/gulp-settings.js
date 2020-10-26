@@ -5,6 +5,15 @@ const JsGlobal = requireLocal(importPath + "js/js-require.js");
 const vo = "vendor/";
 const commonFonts = exportPath + "fonts/";
 
+/**
+ * sass,less等编译参数
+ * mini:默认true,是否最小化
+ * concat:默认true,是否合并
+ * single:默认false，是否直接单文件转换，会存放到scss文件同目录
+ * mini_ext:默认true，压缩式是否增加.min
+ */
+
+
 module.exports = {
     styleSuffix: ".css",
     base: {
@@ -17,7 +26,6 @@ module.exports = {
     },
     less: {
         common: {
-            mini: true,
             import: [
                 importPath + "less/common/common.less"
             ],
@@ -26,7 +34,6 @@ module.exports = {
             ],
         },
         app: {
-            mini: false,
             import: [
                 importPath + "less/app/app.less"
             ],
@@ -34,10 +41,21 @@ module.exports = {
                 exportPath + "css/",
             ],
         },
+        wechat: {
+            mini: true,
+            mini_ext: false,
+            concat: false,
+            single: true,
+            import: [
+                "../wechat/**/*.less"
+            ],
+            export: [
+                ".",
+            ],
+        },
     },
     sass: {
         common: {
-            mini: true,
             import: [
                 importPath + "sass/common/common.scss"
             ],
@@ -46,12 +64,23 @@ module.exports = {
             ],
         },
         app: {
-            mini: false,
             import: [
                 importPath + "sass/app/app.scss"
             ],
             export: [
                 exportPath + "css/",
+            ],
+        },
+        wechat: {
+            mini: true,
+            mini_ext: false,
+            concat: false,
+            single: true,
+            import: [
+                "../wechat/**/*.scss"
+            ],
+            export: [
+                ".",
             ],
         },
     },
@@ -67,14 +96,27 @@ module.exports = {
             ],
         },
         app: {
-            concat: false,
+            concat: true,
+            mini: false,
             import: [
                 importPath + "js/object/*.js"
             ],
             export: [
                 exportPath + 'js/'
             ],
-        }
+        },
+        wechat: {
+            mini: true,
+            mini_ext: false,
+            concat: false,
+            single: true,
+            import: [
+                "../wechat/**/*.js"
+            ],
+            export: [
+                ".",
+            ],
+        },
     },
     images: {
         common: {

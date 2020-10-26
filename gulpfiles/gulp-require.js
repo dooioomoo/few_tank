@@ -1,5 +1,6 @@
 const gulp = require("gulp");
 const sass = require("gulp-sass");
+const gulpif = require("gulp-if");
 const less = require("gulp-less");
 const concat = require("gulp-concat");
 const wait = require("gulp-wait");
@@ -22,6 +23,7 @@ module.exports = {
     sass: sass,
     less: less,
     concat: concat,
+    gulpif: gulpif,
     preprocess: preprocess,
     wait: wait,
     autoprefixer: autoprefixer,
