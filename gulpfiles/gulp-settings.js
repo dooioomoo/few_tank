@@ -23,11 +23,12 @@ module.exports = {
     },
     server: {
         root: '/',
-        name: 'localhost',
+        name: 'test.so',
         port: '3000',
     },
     less: {
         common: {
+            mini: true,
             import: [
                 importPath + "less/common/common.less"
             ],
@@ -36,6 +37,7 @@ module.exports = {
             ],
         },
         app: {
+            mini: true,
             import: [
                 importPath + "less/app/app.less"
             ],
@@ -58,6 +60,7 @@ module.exports = {
     },
     sass: {
         common: {
+            mini: true,
             import: [
                 importPath + "sass/common/common.scss"
             ],
@@ -66,6 +69,7 @@ module.exports = {
             ],
         },
         app: {
+            mini: true,
             import: [
                 importPath + "sass/app/app.scss"
             ],
@@ -88,6 +92,7 @@ module.exports = {
     },
     js: {
         common: {
+            mini: 1,
             concat: true,
             import: JsGlobal.list.concat([
                 importPath + "js/common/**/*",
@@ -99,7 +104,7 @@ module.exports = {
         },
         app: {
             concat: true,
-            mini: false,
+            mini: 1,
             import: [
                 importPath + "js/object/*.js"
             ],
