@@ -29,8 +29,8 @@ var init_compile = function (task, v) {
 var init_syncWatch = function (done) {
     builder.gulp.watch(
         [
-            "./**/*.php",
-            "./**/*.html",
+            "../**/*.php",
+            "../**/*.html",
             setting.base.exportPath + "**/*",
         ],
         builder.browserSync_reload

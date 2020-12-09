@@ -20,7 +20,7 @@ module.exports = {
         exportPath: exportPath,
         importPath: importPath,
         clearFolder: exportPath + "temp/",
-    },
+    }, 
     server: {
         root: '/',
         name: 'test.so',
