@@ -47,7 +47,7 @@ exports.fonts = builder.gulp.series.apply(builder.gulp, init_compile(compile.fon
 exports.imgmini = compile.images.ImageMini;
 
 exports.init = builder.gulp.series(
-    exports.sass,
+    exports.sass,//如果使用less，改成less即可
     exports.js,
     exports.images,
     exports.fonts,
