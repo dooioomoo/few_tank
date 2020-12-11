@@ -1,4 +1,3 @@
-const path = require('path');
 var compile = function (target, done) {
     if (setting.js[target].import == undefined || setting.js[target].export == undefined) {
         return done();
@@ -23,8 +22,6 @@ var compile = function (target, done) {
     let jsext = mini_ext ? {
         min: ".min.js",
     } : { min: ".js", };
-    console.log(setting.js[target].export[0]);
-    console.log(path.join(__dirname, setting.js[target].export[0]));
     return builder.gulp
         .src(setting.js[target].import, { base: "./" })
         .pipe(builder.webpack({
