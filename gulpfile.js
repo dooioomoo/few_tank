@@ -41,7 +41,11 @@ var init_syncWatch = function (done) {
 
 exports.sass = builder.gulp.series.apply(builder.gulp, [init_compile(compile.sass, 'sass'), cleanFile.clear]);
 exports.less = builder.gulp.series.apply(builder.gulp, [init_compile(compile.less, 'less'), cleanFile.clear]);
-exports.js = builder.gulp.series.apply(builder.gulp, [init_compile(compile.js, 'js'), cleanFile.clear]);
+
+//使用gulp管理js
+// exports.js = builder.gulp.series.apply(builder.gulp, [init_compile(compile.js, 'js'), cleanFile.clear]);
+//使用webpack管理js
+exports.js = builder.gulp.series.apply(builder.gulp, [init_compile(compile.webpack, 'js'), cleanFile.clear]);
 exports.images = builder.gulp.series.apply(builder.gulp, init_compile(compile.images, 'images'));
 exports.fonts = builder.gulp.series.apply(builder.gulp, init_compile(compile.fonts, 'fonts'));
 exports.imgmini = compile.images.ImageMini;

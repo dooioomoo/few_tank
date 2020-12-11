@@ -23,7 +23,7 @@ module.exports = {
     },
     server: {
         root: '/',
-        name: 'localhost',
+        name: 'test.so',
         port: '3000',
     },
     less: {
@@ -103,7 +103,8 @@ module.exports = {
             ],
         },
         app: {
-            concat: true,
+            concat: false,
+            single: true,
             mini: 1,
             import: [
                 importPath + "js/object/*.js"
