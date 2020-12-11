@@ -27,7 +27,7 @@ module.exports = {
             ],
             AppJs: [
                 setting.js.app.import,
-                [compile.js.app, cleanFile.clear]
+                [compile.webpack.app, cleanFile.clear]
             ],
             commonImgs: [
                 setting.images.common.import,

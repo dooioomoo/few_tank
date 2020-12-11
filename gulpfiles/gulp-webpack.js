@@ -1,3 +1,5 @@
+const path = require('path');
+
 var compile = function (target, done) {
     if (setting.js[target].import == undefined || setting.js[target].export == undefined) {
         return done();
@@ -29,8 +31,12 @@ var compile = function (target, done) {
             output: {
                 filename: target + ".js"
             },
+            cache: {
+                type: 'filesystem',
+                cacheDirectory: path.resolve(__dirname, setting.base.clearFolder)
+            },
             optimization: {
-                minimize: mini
+                minimize: false
             },
         }))
         .pipe(builder.gulpif(mini,

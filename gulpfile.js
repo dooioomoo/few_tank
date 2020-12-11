@@ -42,7 +42,7 @@ var init_syncWatch = function (done) {
 exports.sass = builder.gulp.series.apply(builder.gulp, [init_compile(compile.sass, 'sass'), cleanFile.clear]);
 exports.less = builder.gulp.series.apply(builder.gulp, [init_compile(compile.less, 'less'), cleanFile.clear]);
 
-//使用gulp管理js
+//使用gulp管理js,***gulp-watch需要单独对应***
 // exports.js = builder.gulp.series.apply(builder.gulp, [init_compile(compile.js, 'js'), cleanFile.clear]);
 //使用webpack管理js
 exports.js = builder.gulp.series.apply(builder.gulp, [init_compile(compile.webpack, 'js'), cleanFile.clear]);
