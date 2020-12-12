@@ -23,7 +23,7 @@ module.exports = {
     },
     server: {
         root: '/',
-        name: 'test.so',
+        name: 'ryansblog.so',
         port: '3000',
     },
     less: {

@@ -1,0 +1,23 @@
+@import "vendor/twitter/bootstrap/scss/functions.scss";
+@import "vendor/twitter/bootstrap/scss/mixins.scss";
+@import "../common/settings/bootstrap.scss";
+
+@import ".mixins/mixins.scss";
+
+/**
+ * import public style
+ */
+@import "public/root.scss";
+@import "public/fonts.scss";
+@import "public/wrap.scss";
+@import "public/title.scss";
+@import "public/article.scss";
+@import "public/list.scss";
+
+/**
+ * import porject style for mobile
+ */
+@import "layout/header_mob.scss";
+@import "layout/footer_mob.scss";
+@import "layout/sidebar_mob.scss";
+@import "pages/pages_mob.scss";

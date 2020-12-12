@@ -1,0 +1,61 @@
+@mixin htmlfont($lang, $multiple: false, $code: "lang=") {
+  @if $multiple {
+    @each $area in $lang {
+      @include defont($area, $code) {
+        @content;
+      }
+    }
+    @include defont($lang, $code) {
+      @content;
+    }
+  } @else {
+    @include defont($lang, $code) {
+      @content;
+    }
+  }
+}
+@mixin headerfont($lang, $multiple: false, $code: "lang=") {
+  @if $multiple {
+    @each $area in $lang {
+      @include defheader($area, $code) {
+        @content;
+      }
+    }
+    @include defheader($lang, $code) {
+      @content;
+    }
+  } @else {
+    @include defheader($lang, $code) {
+      @content;
+    }
+  }
+}
+@mixin defont($lang, $code: "lang=") {
+  html[#{$code}"#{$lang}"] {
+    body,
+    button,
+    input,
+    input,
+    textarea {
+      @content;
+    }
+  }
+}
+@mixin defheader($lang, $code: "lang=") {
+  html[#{$code}"#{$lang}"] {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+      @content;
+    }
+  }
+}
