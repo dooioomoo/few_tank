@@ -3,9 +3,9 @@
  *
  */
 @import "vendor/twitter/bootstrap/scss/functions";
-@import "settings/bootstrap";
-@import "settings/fontawesome";
-@import "settings/fonts";
+@import "./settings/bootstrap";
+@import "./settings/fontawesome";
+@import "./settings/fonts";
 
 /**
   * packages
@@ -22,4 +22,4 @@
  * custom scss
  */
 
-@import "modules/backtohead.scss";
+@import "./modules/backtohead.scss";
