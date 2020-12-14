@@ -70,7 +70,56 @@ less: {
 
 ```
 
+JS自动编译的三种模式：
 
++ 完全的js合并和压缩，一般用于jquery,bootstrap等文件的合并。
+
+```js
+common: {
+    // [gulp] or [webpack].Set the js file merge mode
+    mode: 'gulp',
+    // Whether the compression
+    mini: 1,
+    // Whether merger
+    concat: true,
+    import: JsGlobal.list.concat([
+        importPath + "js/common/**/*",
+        importPath + "js/core/*.js",
+    ]),
+    export: [
+        exportPath + 'js/'
+    ],
+},
+```
+
++ 一种是自动合并，并使用webpack进行模块化编译和压缩
+
+```js
+app: {
+    concat: true,
+    mini: 1,
+    import: [
+        importPath + "js/object/*.js"
+    ],
+    export: [
+        exportPath + 'js/'
+    ],
+},
+```
+
++ 一种是使用webpack进行单文件编译，不合并，仅压缩,此时，import路径必须是*.js的字符串不可以是数组<br>这是将object/pages目录下的文件，逐个输出到js/pages目录下，并不包含子目录文件
+
+
+```js
+single: {
+    concat: false,
+    mini: 1,
+    import: importPath + "js/object/pages/*.js",
+    export: [
+        exportPath + 'js/pages/'
+    ],
+},
+```
 
 功能完善中 ....
 
