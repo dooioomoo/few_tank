@@ -3,7 +3,7 @@ const vo = "vendor/";
 module.exports = {
     list: [
         vo + "components/jquery/jquery.js",
-        // vo + "components/jqueryui/jquery-ui.js",
-        // vo + "twitter/bootstrap/dist/js/bootstrap.bundle.js",
+        vo + "components/jqueryui/jquery-ui.js",
+        vo + "twitter/bootstrap/dist/js/bootstrap.bundle.js",
     ],
 };
