@@ -117,12 +117,9 @@ module.exports = {
             ],
         },
         single: {
-            mode: 'gulp',
             concat: false,
             mini: 1,
-            import: [
-                importPath + "js/object/pages/*.js"
-            ],
+            import: importPath + "js/object/pages/*.js",
             export: [
                 exportPath + 'js/pages/'
             ],

@@ -1,4 +1,17 @@
 const path = require('path');
+const glob = require('glob');
+
+var get_entry = function (list) {
+    let reObj = {};
+    list.forEach(element => {
+        appU = element.split('/');
+        filename = appU[appU.length - 1];
+        reObj[filename.substring(0, filename.indexOf('.'))] = element;
+        // console.log(filename.substring(0, filename.indexOf('.')));
+    });
+    return reObj;
+}
+
 
 var compile = function (target, done) {
     if (setting.js[target].import == undefined || setting.js[target].export == undefined) {
@@ -10,7 +23,6 @@ var compile = function (target, done) {
 
     let mini = (typeof setting.js[target].mini == 'undefined' || setting.js[target].mini != false);
     let concat = (typeof setting.js[target].concat == 'undefined' || setting.js[target].concat != false);
-    let single = !(typeof setting.js[target].single == 'undefined' || setting.js[target].single != false);
     let mini_ext = true;
     if (!mini) {
         mini_ext = false;
@@ -24,39 +36,33 @@ var compile = function (target, done) {
     let jsext = mini_ext ? {
         min: ".min.js",
     } : { min: ".js", };
+    var webpack_config = {
+        mode: "production",
+        cache: {
+            type: 'filesystem',
+            cacheDirectory: path.resolve(__dirname, setting.base.clearFolder)
+        },
+        optimization: {
+            minimize: false
+        },
+        performance: {
+            hints: 'error',
+            maxAssetSize: 8000000, // 整数类型（以字节为单位）
+            maxEntrypointSize: 800000 // 整数类型（以字节为单位）
+        }
+    };
+    // var outputName = concat ? { filename: target + ".js" } : { filename: "[name].js" };
+    if (concat) {
+        webpack_config.output = { filename: target + ".js" }
+    } else {
+        webpack_config.output = { filename: "[name].js" }
+    }
+    if (!concat) {
+        webpack_config.entry = get_entry(glob.sync(setting.js[target].import));
+    }
     return builder.gulp
         .src(setting.js[target].import, { base: "./" })
-        .pipe(builder.webpack_stream({
-            mode: "production",
-            output: {
-                filename: target + ".js"
-            },
-            cache: {
-                type: 'filesystem',
-                cacheDirectory: path.resolve(__dirname, setting.base.clearFolder)
-            },
-            optimization: {
-                minimize: false
-            },
-            // plugins: [
-            //     new builder.webpack.ProvidePlugin({
-            //         $: 'jQuery',
-            //         jQuery: 'jQuery'
-            //     })
-            // ],
-            // resolve: {
-            //     modules: [
-            //         path.join(__dirname, "../vendor/components/jquery"),
-            //         "vendor"
-            //     ]
-            // },
-            // devtool: 'source-map',
-            performance: {
-                hints: 'error',
-                maxAssetSize: 8000000, // 整数类型（以字节为单位）
-                maxEntrypointSize: 800000 // 整数类型（以字节为单位）
-            }
-        }))
+        .pipe(builder.webpack_stream(webpack_config))
         .pipe(builder.gulpif(mini,
             builder.minify({
                 ext: jsext,

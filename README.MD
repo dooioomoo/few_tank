@@ -43,7 +43,7 @@
  * sass,less等编译参数
  * mode:'gulp', //mode不设置或者==webpack的时候使用webpack压缩，设置为其他时使用gulp压缩
  * mini:默认true,是否最小化
- * concat:默认true,是否合并
+ * concat:默认true,是否合并,false时会输出独立文件。js情况下需要将import设置为字符串，不能是数组
  * single:默认false，是否直接单文件转换，会存放到scss文件同目录，webpack下无效
  * mini_ext:默认true，压缩式是否增加.min
  */
