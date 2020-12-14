@@ -24,7 +24,7 @@ var compile = function (target, done) {
     } : { min: ".js", };
 
     return builder.gulp
-        .src(setting.js[target].import, { base: "./" })
+        .src(setting.js[target].import)
         .pipe(builder.gulpif(concat, builder.concat(target + ".js")))
         .pipe(builder.gulp.dest(setting.base.clearFolder))
         .pipe(builder.gulpif(mini,

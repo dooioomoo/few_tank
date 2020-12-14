@@ -116,6 +116,17 @@ module.exports = {
                 exportPath + 'js/'
             ],
         },
+        single: {
+            mode: 'gulp',
+            concat: false,
+            mini: 1,
+            import: [
+                importPath + "js/object/pages/*.js"
+            ],
+            export: [
+                exportPath + 'js/pages/'
+            ],
+        },
     },
     images: {
         common: {
