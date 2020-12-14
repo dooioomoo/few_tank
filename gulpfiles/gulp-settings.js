@@ -92,8 +92,11 @@ module.exports = {
     },
     js: {
         common: {
-            mode: 'gulp',//gulp or webpack
+            // [gulp] or [webpack].Set the js file merge mode
+            mode: 'gulp',
+            // Whether the compression
             mini: 1,
+            // Whether merger
             concat: true,
             import: JsGlobal.list.concat([
                 importPath + "js/common/**/*",
@@ -105,7 +108,6 @@ module.exports = {
         },
         app: {
             concat: true,
-            single: true,
             mini: 1,
             import: [
                 importPath + "js/object/*.js"
