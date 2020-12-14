@@ -26,7 +26,7 @@ var compile = function (target, done) {
     } : { min: ".js", };
     return builder.gulp
         .src(setting.js[target].import, { base: "./" })
-        .pipe(builder.webpack({
+        .pipe(builder.webpack_stream({
             mode: "production",
             output: {
                 filename: target + ".js"
@@ -38,6 +38,24 @@ var compile = function (target, done) {
             optimization: {
                 minimize: false
             },
+            // plugins: [
+            //     new builder.webpack.ProvidePlugin({
+            //         $: 'jQuery',
+            //         jQuery: 'jQuery'
+            //     })
+            // ],
+            // resolve: {
+            //     modules: [
+            //         path.join(__dirname, "../vendor/components/jquery"),
+            //         "vendor"
+            //     ]
+            // },
+            // devtool: 'source-map',
+            performance: {
+                hints: 'error',
+                maxAssetSize: 30000000, // 整数类型（以字节为单位）
+                maxEntrypointSize: 50000000 // 整数类型（以字节为单位）
+            }
         }))
         .pipe(builder.gulpif(mini,
             builder.minify({
@@ -53,7 +71,12 @@ var compile = function (target, done) {
 var moduleVar = {};
 
 Object.keys(setting.js).forEach(element => {
-    eval('moduleVar[element] = function ' + element + '_javascript (cb) { return compile(element, cb); }');
+    mode = (typeof setting.js[element].mode == 'undefined' || setting.js[element].mode == 'webpack');
+    if (mode) {
+        eval('moduleVar[element] = function ' + element + '_javascript (cb) { return compile(element, cb); }');
+    } else {
+        eval('moduleVar[element] = function ' + element + '_javascript (cb) { return global.compile.js.compile(element, cb); }');
+    }
 });
 
 module.exports = moduleVar;

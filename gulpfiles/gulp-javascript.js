@@ -38,10 +38,12 @@ var compile = function (target, done) {
 
 
 }
-var moduleVar = {};
+// var moduleVar = {};
 
-Object.keys(setting.js).forEach(element => {
-    eval('moduleVar[element] = function ' + element + '_javascript (cb) { return compile(element, cb); }');
-});
+// Object.keys(setting.js).forEach(element => {
+//     eval('moduleVar[element] = function ' + element + '_javascript (cb) { return compile(element, cb); }');
+// });
 
-module.exports = moduleVar;
+module.exports = {
+    compile: compile
+};

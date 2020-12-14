@@ -92,6 +92,7 @@ module.exports = {
     },
     js: {
         common: {
+            mode: 'gulp',//gulp or webpack
             mini: 1,
             concat: true,
             import: JsGlobal.list.concat([
@@ -103,7 +104,7 @@ module.exports = {
             ],
         },
         app: {
-            concat: false,
+            concat: true,
             single: true,
             mini: 1,
             import: [

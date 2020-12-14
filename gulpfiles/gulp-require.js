@@ -17,7 +17,8 @@ const postcss = require("gulp-postcss");
 const preprocess = require("gulp-preprocess");
 const merge = require("merge-stream");
 const dotenv = require("dotenv");
-const webpack = require("webpack-stream");
+const webpack_stream = require("webpack-stream");
+const webpack = require('webpack');
 // const php = require("gulp-connect-php");
 
 module.exports = {
@@ -38,6 +39,7 @@ module.exports = {
     postcss: postcss,
     merge: merge,
     dotenv: dotenv,
+    webpack_stream: webpack_stream,
     webpack: webpack,
     clean: (list) => {
         return gulp.src(list, { read: false, allowEmpty: true }).pipe(clean({ force: true }));
