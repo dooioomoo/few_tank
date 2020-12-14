@@ -41,9 +41,10 @@
 ```js
 /**
  * sass,less等编译参数
+ * mode:'gulp', //mode不设置或者==webpack的时候使用webpack压缩，设置为其他时使用gulp压缩
  * mini:默认true,是否最小化
  * concat:默认true,是否合并
- * single:默认false，是否直接单文件转换，会存放到scss文件同目录
+ * single:默认false，是否直接单文件转换，会存放到scss文件同目录，webpack下无效
  * mini_ext:默认true，压缩式是否增加.min
  */
 
@@ -65,8 +66,11 @@ less: {
         },
 }
 
+# import在webpack中等于入口文件。分列多个入口文件，需要重新设置一个组。
 
 ```
+
+
 
 功能完善中 ....
 
