@@ -6,7 +6,7 @@ var get_entry = function (list) {
     list.forEach(element => {
         appU = element.split('/');
         filename = appU[appU.length - 1];
-        reObj[filename.substring(0, filename.indexOf('.'))] = element;
+        reObj[filename.substring(0, filename.indexOf('.'))] = './' + element;
         // console.log(filename.substring(0, filename.indexOf('.')));
     });
     return reObj;
@@ -45,6 +45,10 @@ var compile = function (target, done) {
         optimization: {
             minimize: false
         },
+        node: {
+            fs: 'empty',
+            readline: 'empty'
+        },
         performance: {
             hints: 'error',
             maxAssetSize: 8000000, // 整数类型（以字节为单位）
@@ -69,6 +73,7 @@ var compile = function (target, done) {
             }
         }
     }
+    console.log(webpack_config);
     return builder.gulp
         .src(setting.js[target].import, { base: "./" })
         .pipe(builder.webpack_stream(webpack_config))
