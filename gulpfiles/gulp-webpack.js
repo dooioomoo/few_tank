@@ -58,7 +58,16 @@ var compile = function (target, done) {
         webpack_config.output = { filename: "[name].js" }
     }
     if (!concat) {
-        webpack_config.entry = get_entry(glob.sync(setting.js[target].import));
+        if (typeof setting.js[target].import == 'object') {
+            setting.js[target].import.forEach((v, i) => {
+                if (glob.sync(v).length)
+                    webpack_config.entry = get_entry(glob.sync(v));
+            });
+        } else {
+            if (glob.sync(setting.js[target].import).length) {
+                webpack_config.entry = get_entry(glob.sync(setting.js[target].import));
+            }
+        }
     }
     return builder.gulp
         .src(setting.js[target].import, { base: "./" })
