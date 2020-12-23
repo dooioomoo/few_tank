@@ -73,7 +73,7 @@ var compile = function (target, done) {
             }
         }
     }
-    console.log(webpack_config);
+
     return builder.gulp
         .src(setting.js[target].import, { base: "./" })
         .pipe(builder.webpack_stream(webpack_config))
