@@ -23,7 +23,7 @@ module.exports = {
                     setting.base.importPath + "js/core/**/*",
                     setting.base.importPath + "js/js-require.js",
                 ],
-                [compile.js.common, cleanFile.clear]
+                [compile.webpack.common, cleanFile.clear]
             ],
             AppJs: [
                 setting.js.app.import,
