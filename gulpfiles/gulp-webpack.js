@@ -49,10 +49,13 @@ var compile = function (target, done) {
             fs: 'empty',
             readline: 'empty'
         },
+        resolve: {
+            modules: ['node_modules', 'vendor', 'vendor/node_modules'],
+        },
         performance: {
             hints: 'error',
-            maxAssetSize: 8000000, // 整数类型（以字节为单位）
-            maxEntrypointSize: 800000 // 整数类型（以字节为单位）
+            maxAssetSize: 80000000, // 整数类型（以字节为单位）
+            maxEntrypointSize: 8000000 // 整数类型（以字节为单位）
         }
     };
     // var outputName = concat ? { filename: target + ".js" } : { filename: "[name].js" };
