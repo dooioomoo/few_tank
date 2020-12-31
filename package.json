@@ -6,8 +6,9 @@
   "scripts": {
     "build": "gulp",
     "watch": "gulp watch",
-    "init": "npm i -g autoprefixer browser-sync child_process cssnano dotenv gulp gulp-clean gulp-concat gulp-connect-php gulp-cssnano gulp-eslint gulp-if gulp-imagemin gulp-insert gulp-less gulp-minify gulp-newer gulp-plumber gulp-postcss postcss gulp-preprocess gulp-rename node-sass gulp-sass gulp-uglify gulp-wait imagemin-gifsicle imagemin-jpegtran imagemin-svgo merge-stream webpack webpack-stream",
-    "setPath":"setx NODE_PATH %AppData%\npm\node_modules && set NODE_PATH=%AppData%\npm\node_modules && setx GULP_PATH %AppData%\npm\node_modules\gulp && set GULP_PATH=%AppData%\npm\node_modules\gulp",
+    "init": "npm i -g autoprefixer browser-sync child_process cssnano dotenv gulp glob gulp-clean gulp-concat gulp-connect-php gulp-cssnano gulp-eslint gulp-if gulp-imagemin gulp-insert gulp-less gulp-minify gulp-newer gulp-plumber gulp-postcss postcss gulp-preprocess gulp-rename node-sass gulp-sass gulp-uglify gulp-wait imagemin-gifsicle imagemin-jpegtran imagemin-svgo merge-stream webpack webpack-stream",
+    "linux-init": "sudo npm i -g --unsafe-perm autoprefixer browser-sync child_process cssnano dotenv gulp glob gulp-clean gulp-concat gulp-connect-php gulp-cssnano gulp-eslint gulp-if gulp-imagemin gulp-insert gulp-less gulp-minify gulp-newer gulp-plumber gulp-postcss postcss gulp-preprocess gulp-rename node-sass gulp-sass gulp-uglify gulp-wait imagemin-gifsicle imagemin-jpegtran imagemin-svgo merge-stream webpack webpack-stream",
+    "setPath": "setx NODE_PATH %AppData%\\npm\\node_modules && set NODE_PATH=%AppData%\\npm\\node_modules && setx GULP_PATH %AppData%\\npm\\node_modules\\gulp && set GULP_PATH=%AppData%\\npm\\node_modules\\gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

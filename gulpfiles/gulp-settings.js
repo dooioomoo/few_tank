@@ -23,7 +23,7 @@ module.exports = {
     },
     server: {
         root: '/',
-        name: 'ryansblog.so',
+        name: 'localhost',
         port: '3000',
     },
     less: {
@@ -72,6 +72,16 @@ module.exports = {
             mini: true,
             import: [
                 importPath + "sass/app/app.scss"
+            ],
+            export: [
+                exportPath + "css/",
+            ],
+        },
+        modules: {
+            mini: true,
+            concat: false,
+            import: [
+                importPath + "sass/objects/*.scss"
             ],
             export: [
                 exportPath + "css/",

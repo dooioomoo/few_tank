@@ -22,7 +22,8 @@ var compileSass = function (target, done) {
     }
 
     return builder.gulp
-        .src(setting.sass[target].import, { base: "./" })
+        // .src(setting.sass[target].import, { base: "./" })
+        .src(setting.sass[target].import)
         .pipe(builder.plumber())
         .pipe(builder.sass({ includePaths: [setting.server.root], outputStyle: "expanded" }))
         .pipe(builder.gulpif(concat, builder.concat(target + setting.styleSuffix)))

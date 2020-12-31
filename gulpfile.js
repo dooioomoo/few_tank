@@ -55,7 +55,7 @@ exports.init = builder.gulp.series(
     exports.js,
     exports.images,
     exports.fonts,
-    exports.imgmini,
+    // exports.imgmini,
     cleanFile.clear,
 );
 
