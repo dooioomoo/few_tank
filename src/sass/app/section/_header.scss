@@ -1,0 +1,45 @@
+.site-header {
+
+}
+
+.site-logo {
+
+  .site-description {
+    font-size: .715rem;
+  }
+
+  img {
+    width: auto;
+    max-width: 100%;
+    max-height: 50px;
+  }
+}
+
+.site-branding {
+  background: $heading-bg;
+
+  &.sticky {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    border-top: 0;
+    @include box-shadow(0 1px 2rem rgba($black, .2));
+  }
+
+  .wrap {
+    padding-top: $heading-top;
+    padding-bottom: $heading-bottom;
+  }
+
+  .site-branding-text {
+    .widget {
+      margin-bottom: 0 !important;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

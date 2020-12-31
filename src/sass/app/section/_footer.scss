@@ -1,0 +1,39 @@
+#colophon {
+}
+
+.site-footer {
+  position: relative;
+  padding: 30px 0;
+  background: $footer-background;
+  color: $footer-color;
+
+  a {
+    color: $footer-link-color;
+
+    &:hover {
+      color: $footer-color;
+    }
+  }
+
+  .site-info {
+
+  }
+}
+
+
+@include media-breakpoint-down(md) {
+  .site-footer {
+
+    a {
+
+      &:hover {
+
+      }
+    }
+
+    .site-info {
+      text-align: center;
+      font-size: .875rem;
+    }
+  }
+}

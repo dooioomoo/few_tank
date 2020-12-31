@@ -7,12 +7,16 @@
 /**
  * import public style
  */
+@import "public/reset";
 @import "public/root.scss";
 @import "public/fonts.scss";
 @import "public/wrap.scss";
 @import "public/title.scss";
 @import "public/article.scss";
 @import "public/list.scss";
+@import "public/images";
+@import "public/loader";
+@import "public/xzoom";
 
 /**
  * import porject style for mobile

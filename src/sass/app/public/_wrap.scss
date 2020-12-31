@@ -2,3 +2,44 @@ body {
   position: relative;
   background: rgba($primary, 0.0618);
 }
+#page.site {
+  overflow: hidden;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+span,
+li,
+img {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+:focus {
+  outline: none !important;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  @include transition(all 0.35s ease-in-out);
+
+  &:hover {
+    text-decoration: none;
+    @include transition(all 0.35s ease-in-out);
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .text-#{$color} .fa {
+    color: $value !important;
+  }
+}

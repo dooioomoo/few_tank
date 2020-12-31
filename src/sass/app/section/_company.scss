@@ -1,0 +1,46 @@
+.Clayball-company_outlines_list {
+  &.table-style {
+    border: 5px solid rgba($primary, 1);
+    border-radius: 15px;
+
+    dt, dd {
+      border-color: rgba($primary, 1);
+    }
+
+    dt {
+      background: rgba($primary, 1);
+      color: $white;
+      border-top: 1px solid $white;
+    }
+
+    dd {
+      border-top: 1px solid $primary;
+      border-left: 0;
+    }
+  }
+
+  &.line-style {
+    dl.line-row {
+      dt, dd {
+        border-color: $primary;
+      }
+
+      dt {
+        color: $primary;
+      }
+
+      @include media-breakpoint-down(sm) {
+        background: $primary;
+        color: $white;
+        border: none;
+        dt, dd {
+          font-size: 1.5rem;
+        }
+        dt {
+          color: rgba($white,.7);
+        }
+      }
+    }
+  }
+
+}

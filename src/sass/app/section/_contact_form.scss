@@ -1,0 +1,10 @@
+.wpcf7-submit {
+  margin: 20px auto;
+}
+
+@include media-breakpoint-down(md) {
+  .wpcf7-form-control-wrap {
+    display: block;
+    margin-bottom: 15px;
+  }
+}

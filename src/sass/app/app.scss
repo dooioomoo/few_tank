@@ -7,13 +7,17 @@
 /**
  * import public style
  */
+@import "public/reset";
 @import "public/root";
 @import "public/fonts";
 @import "public/wrap";
 @import "public/title";
 @import "public/article";
 @import "public/list";
-
+@import "public/images";
+@import "public/loader";
+@import "public/xzoom";
+@import "section/section";
 /**
  * import project style for display
  */

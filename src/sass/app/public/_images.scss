@@ -1,0 +1,30 @@
+a {
+  &.post-thumbnail {
+    overflow: hidden;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+  }
+}
+
+.wp-caption {
+  margin-top: 0.5rem;
+
+  .wp-caption-text {
+    text-align: center;
+  }
+}
+
+.entry-content {
+  p {
+    margin-bottom: 2rem;
+
+    [class*="wp-image-"] {
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+}

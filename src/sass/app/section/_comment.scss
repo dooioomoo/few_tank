@@ -1,0 +1,241 @@
+#comments {
+  &.comments-area {
+
+  }
+
+  .comments-title {
+    font-size: .75rem;
+    font-weight: normal;
+    border: 1px solid #eee;
+    background: #f8f8f8;
+    padding: 5px 10px;
+    border-radius: $btn-border-radius;
+
+    span {
+      padding-left: 10px;
+      padding-right: 10px;
+      color: $primary;
+      font-weight: bold;
+    }
+  }
+
+  .comment-list {
+
+    list-style: none;
+    padding-left: 0;
+
+    .comment {
+      margin-bottom: 32px;
+      border-bottom: 1px solid rgba(lighten($primary, 20%), .3);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .comment-body {
+        //border-right: 3px dotted #f8f8f8;
+
+        .comment-meta {
+          display: flex;
+          flex: 1 0 auto;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+
+          &::before, &::after {
+            display: none;
+          }
+
+          .comment-author {
+            .avatar {
+              &.photo {
+                margin-right: 12px;
+              }
+            }
+
+            .fn {
+              font-size: 1.25rem;
+            }
+
+            .says {
+              font-size: .75rem;
+              font-weight: lighter;
+            }
+          }
+
+          .comment-metadata {
+            font-size: .75rem;
+          }
+
+          .comment-awaiting-moderation {
+            flex: 100%;
+            font-size: 9pt;
+            padding: 2px 10px;
+            background-color: rgba($danger, 1);
+            color: #fff;
+            margin-top: 20px;
+            border-radius: $btn-border-radius;
+          }
+        }
+
+        .comment-content {
+          padding: 10px 0 10px 48px;
+        }
+
+        .reply {
+          .comment-reply-link {
+
+          }
+        }
+      }
+
+      .children {
+        list-style: none;
+      }
+    }
+  }
+
+  .comment-respond {
+    .comment-reply-title {
+      font-size: .75rem;
+      font-weight: normal;
+      border: 1px solid #eee;
+      background: #f8f8f8;
+      padding: 5px 10px;
+      border-radius: $btn-border-radius;
+    }
+
+    .comment-form {
+      .logged-in-as {
+        display: flex;
+        flex: 1 0 auto;
+        align-items: center;
+        justify-content: center;
+
+        a {
+          display: block;
+          padding: 5px 15px;
+          //background: $primary;
+          color: #fff;
+          border-radius: $btn-border-radius;
+        }
+      }
+
+      .comment-notes {
+        padding: 2px 6px;
+        color: $warning;
+      }
+
+      .comment-form-cookies-consent {
+        label {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+
+  .no-comments {
+
+  }
+}
+
+@include media-breakpoint-down(md) {
+  #comments {
+    &.comments-area {
+
+    }
+
+    .comments-title {
+
+      span {
+      }
+    }
+
+    .comment-list {
+
+      .comment {
+        &:last-child {
+        }
+
+        .comment-body {
+          //border-right: 3px dotted #f8f8f8;
+
+          .comment-meta {
+            align-items: flex-start;
+            flex-direction: column;
+
+            &::before, &::after {
+
+            }
+
+            .comment-author {
+              .avatar {
+                &.photo {
+
+                }
+              }
+
+              .fn {
+
+              }
+
+              .says {
+
+              }
+            }
+
+            .comment-metadata {
+              margin-left: 50px;
+            }
+
+            .comment-awaiting-moderation {
+
+            }
+          }
+
+          .comment-content {
+
+          }
+
+          .reply {
+            .comment-reply-link {
+
+            }
+          }
+        }
+
+        .children {
+
+        }
+      }
+    }
+
+    .comment-respond {
+      .comment-reply-title {
+
+      }
+
+      .comment-form {
+        .logged-in-as {
+
+
+          a {
+
+          }
+        }
+
+        .comment-notes {
+        }
+
+        .comment-form-cookies-consent {
+          label {
+          }
+        }
+      }
+    }
+
+    .no-comments {
+
+    }
+  }
+}
